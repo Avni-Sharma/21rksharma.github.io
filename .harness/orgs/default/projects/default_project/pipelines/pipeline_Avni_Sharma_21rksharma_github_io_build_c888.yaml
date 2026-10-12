@@ -1,0 +1,21 @@
+pipeline:
+  id: pipeline_Avni_Sharma_21rksharma_github_io_build_c888
+  name: pipeline_Avni_Sharma_21rksharma_github_io_build_c888
+  stages:
+    - name: Build
+      clone:
+        enabled: true
+      cache:
+        enabled: true
+      runtime: cloud
+      steps:
+        - name: Verify Checkout
+          id: verify_checkout
+          run:
+            shell: bash
+            script: |
+              echo "Repository checked out successfully"
+              ls -la
+              cat README.md
+  tags:
+    onboarding: "true"
